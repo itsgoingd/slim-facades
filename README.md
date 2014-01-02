@@ -134,6 +134,16 @@ $output = View::render('world.html');
 ```
 
 ### Custom facades
+- you can create a custom facades by extending `SlimFacades\Facade` class
+
+```php
+class MyFacade extends SlimFacades\Facade
+{
+	// return the name of the component from the DI container
+	protected static function getFacadeAccessor() { return 'my_component'; }
+}
+```
+
 - you can register custom facades by passing the aliases to the _Facade::registerAliases()_ function
 
 ```php
