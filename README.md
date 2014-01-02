@@ -35,15 +35,32 @@ To install latest version simply add it to your `composer.json`:
 Once the package is installed, you need to initialize the Facade class:
 
 ```php
+require 'vendor/autoload.php';
+
 use SlimFacades\Facade;
 
-$app = new Slim(...);
+$app = new Slim\Slim();
+
+// initialize the Facade class
 
 Facade::setFacadeApplication($app);
 Facade::registerAliases();
+
+// now you can start using the facades
+
+Config::set('debug', true);
+
+Route::get('/hello/:name', function($name)
+{
+	View::display('hello.html', array(
+		'name' => Input::get('name', $name)
+	));
+});
+
+App::run();
 ```
 
-Now you have access to following facades:
+Following facades are available:
 
 ### App
 - facade for Slim instance and following additional methods:
