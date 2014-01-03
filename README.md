@@ -134,7 +134,7 @@ $output = View::render('world.html');
 ```
 
 ### Custom facades
-- you can create a custom facades by extending `SlimFacades\Facade` class
+You can create a custom facades by extending `SlimFacades\Facade` class.
 
 ```php
 class MyFacade extends SlimFacades\Facade
@@ -144,7 +144,7 @@ class MyFacade extends SlimFacades\Facade
 }
 ```
 
-- you can register custom facades by passing the aliases to the _Facade::registerAliases()_ function
+You can register custom facades by passing the aliases to the _Facade::registerAliases()_ function.
 
 ```php
 Facade::registerAliases(array(
@@ -159,6 +159,8 @@ Facade::registerAliases(array(
 	'View'     => 'SlimFacades\View',
 ));
 ```
+
+Note that calling _Facade::registerAliases()_ with a list of aliases will register ONLY the specified facades, if you want to register default facades as well as custom ones, you can call the function two times, with and without the array argument.
 
 ## Licence
 
