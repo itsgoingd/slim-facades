@@ -162,6 +162,10 @@ Facade::registerAliases(array(
 
 Note that calling _Facade::registerAliases()_ with a list of aliases will register ONLY the specified facades, if you want to register default facades as well as custom ones, you can call the function two times, with and without the array argument.
 
+## Links
+
+- [SlimStatic](https://github.com/johnstevenson/slim-static) - alternative implementation with similar API, without dependency on Laravel components by [John Stevenson](https://github.com/johnstevenson)
+
 ## Licence
 
 Copyright (c) 2013 Miroslav Rigler
